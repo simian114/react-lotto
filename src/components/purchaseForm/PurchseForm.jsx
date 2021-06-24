@@ -1,21 +1,25 @@
 import React from 'react';
+import {
+  PurchaseFormLabel,
+  PurchaseFormWrapper,
+  PurchaseFormDivWrapper,
+} from './PurchseForm.style';
+import Button from '../common/button/Button';
 
 const PurchseForm = () => {
   return (
-    <form className="mt-5">
-      <label className="mb-2 d-inline-block"
-        >구입할 금액을 입력해주세요.
-      </label>
-      <div className="d-flex">
+    <PurchaseFormWrapper>
+      <PurchaseFormLabel>구입할 금액을 입력해주세요.</PurchaseFormLabel>
+      <PurchaseFormDivWrapper>
         <input
-          type="number"
-          className="w-100 mr-2 pl-2"
-          placeholder="구입 금액"
+          type='number'
+          className='w-100 mr-2 pl-2'
+          placeholder='구입 금액'
         />
-        <button type="button" className="btn btn-cyan">확인</button>
-      </div>
-    </form>
+        <Button color={'warning'}>확인</Button>
+      </PurchaseFormDivWrapper>
+    </PurchaseFormWrapper>
   );
-}
+};
 
 export default PurchseForm;
