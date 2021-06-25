@@ -1,46 +1,15 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const ToggleWrapper = styled.label`
   z-index: 0;
   position: relative;
-
-  input:checked + span::before {
-    background-color: rgba(0, 188, 212, 0.6);
-  }
-  input:checked + span::after {
-    background-color: rgb(0, 188, 212);
-    transform: translateX(16px);
-  }
-  &: hover > input {
-    opacity: 0.04;
-  }
-  &: hover > input:focus {
-    opacity: 0.16;
-  }
-  input:active + span::before {
-    background-color: rgba(0, 188, 212, 0.6);
-  }
-  input:checked:active + span::before {
-    background-color: rgba(0, 0, 0, 0.38);
-  }
-  input:disabled + span {
-    color: black;
-    opacity: 0.38;
-    cursor: default;
-  }
-  input:disabled + span::before {
-    background-color: rgba(0, 0, 0, 0.38);
-  }
-  input:checked:disabled + span::before {
-    background-color: rgba(0, 188, 212, 0.6);
-  }
 `;
 
-  
 const ToggleText = styled.span`
   display: inline-block;
   width: 100%;
   cursor: pointer;
+
   &:: before {
     content: '';
     float: right;
@@ -53,6 +22,7 @@ const ToggleText = styled.span`
     vertical-align: top;
     transition: background-color 0.2s, opacity 0.2s;
   }
+
   &:: after {
     content: '';
     position: absolute;
@@ -62,8 +32,8 @@ const ToggleText = styled.span`
     width: 20px;
     height: 20px;
     background-color: white;
-    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-      0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     transition: background-color 0.2s, transform 0.2s;
   }
 `;
@@ -91,26 +61,72 @@ const ToggleCheckBox = styled.input`
     right: -10px;
     background-color: rgb(0, 188, 212);
   }
+
+  &: checked + ${ToggleText}::before {
+    background-color: rgba(0, 188, 212, 0.6);
+  }
+
+  &: checked + span::after {
+    background-color: rgb(0, 188, 212);
+    transform: translateX(16px);
+  }
+
+  &: hover {
+    opacity: 0.04;
+  }
+
+  ${ToggleWrapper}:hover & {
+    opacity: 0.04;
+  }
+
   &: focus {
     opacity: 0.12;
   }
+
+  ${ToggleWrapper}:hover &:focus {
+    opacity: 0.16;
+  }
+
   &: active {
     opacity: 1;
     transform: scale(0);
     transition: transform 0s, opacity 0s;
   }
+
+  &: active + ${ToggleText}::before {
+    background-color: rgba(0, 188, 212, 0.6);
+  }
+
+  &: checked:active + ${ToggleText}::before {
+    background-color: rgba(0, 0, 0, 0.38);
+  }
+
   &: disabled {
     opacity: 0;
+  }
+
+  &: disabled & ${ToggleText} {
+    color: black;
+    opacity: 0.38;
+    cursor: default;
+  }
+
+  &: disabled: ${ToggleText}::before {
+    background-color: rgba(0, 0, 0, 0.38);
+  }
+  
+  &: checked:disabled + ${ToggleText}::before {
+    background-color: rgba(0, 188, 212, 0.6);
   }
 `;
 
 const Toggle = () => {
   return (
     <ToggleWrapper>
-      <ToggleCheckBox />
+      <ToggleCheckBox type='checkbox' />
       <ToggleText>번호보기</ToggleText>
     </ToggleWrapper>
   );
-}
+};
 
 export default Toggle;
