@@ -6,15 +6,13 @@ const StyledInput = styled.input`
   text-align: center;
   width: 30px;
   height: 36px;
-  ${({ fullWidth }) => 
-    fullWidth && css`
+  ${({ fullWidth }) =>
+    fullWidth &&
+    css`
       width: 100%;
       margin-right: 0.5rem;
       margin-left: 0.5rem;
-    `
-  }
+    `}
 `;
 
-export {
-  StyledInput
-}
+export { StyledInput };

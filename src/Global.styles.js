@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -11,16 +11,6 @@ const GlobalStyle = createGlobalStyle`
   #app {
     max-width: 400px;
     margin: 0 auto;
-  }
-
-  .winning-number {
-    width: 30px;
-    height: 36px;
-  }
-
-  .bonus-number {
-    width: 30px;
-    height: 36px;
   }
 `;
 

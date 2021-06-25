@@ -1,4 +1,3 @@
-import React from 'react';
 import { TableWrapper, TdThWrapper, TrWrapper, Wrapper } from './Table.styles';
 
 const Table = () => {

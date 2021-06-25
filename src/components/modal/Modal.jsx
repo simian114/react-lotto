@@ -1,4 +1,3 @@
-import React from 'react';
 import Table from './table/Table';
 import Button from '../common/button/Button';
 import {
