@@ -7,16 +7,17 @@ import Modal from './components/modal/Modal';
 
 function App() {
   return (
-    <AppWrapper id="app">
+    <AppWrapper id='app'>
       <AppFlexWrapper>
         <AppWidthWrapper>
-          <h1 className="text-center">🎱 행운의 로또</h1>
+          <h1 className='text-center'>🎱 행운의 로또</h1>
           <PurchseForm />
           <Lottos />
           <WinningNumberForm />
         </AppWidthWrapper>
       </AppFlexWrapper>
-      <Modal />
+      {/* NOTE: state로 open 관리 */}
+      <Modal open={true} />
     </AppWrapper>
   );
 }
