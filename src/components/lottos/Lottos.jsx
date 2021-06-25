@@ -1,6 +1,7 @@
 import React from 'react';
 import { LottoList, LottosHeader, LottosWrapper } from './Lottos.styles';
 import Toggle from '../common/toggle/Toggle';
+import Lotto from './lotto/Lotto';
 
 const Lottos = () => {
   return (
@@ -12,11 +13,10 @@ const Lottos = () => {
         </div>
       </LottosHeader>
       <LottoList>
-        <li className='mx-1 text-4xl'>🎟️ </li>
-        <li className='mx-1 text-4xl'>🎟️ </li>
-        <li className='mx-1 text-4xl'>🎟️ </li>
-        <li className='mx-1 text-4xl'>🎟️ </li>
-        <li className='mx-1 text-4xl'>🎟️ </li>
+        <Lotto />
+        <Lotto />
+        <Lotto />
+        <Lotto />
       </LottoList>
     </LottosWrapper>
   );
