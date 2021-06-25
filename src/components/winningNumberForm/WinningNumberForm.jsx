@@ -1,4 +1,5 @@
 import React from 'react';
+import Input from '../common/input/Input';
 
 const WinningNumberForm = () => {
   return (
@@ -11,36 +12,18 @@ const WinningNumberForm = () => {
               <div>
                 <h4 className="mt-0 mb-3 text-center">당첨 번호</h4>
                 <div>
-                  <input
-                    type="number"
-                    className="winning-number mx-1 text-center"
-                  />
-                  <input
-                    type="number"
-                    className="winning-number mx-1 text-center"
-                  />
-                  <input
-                    type="number"
-                    className="winning-number mx-1 text-center"
-                  />
-                  <input
-                    type="number"
-                    className="winning-number mx-1 text-center"
-                  />
-                  <input
-                    type="number"
-                    className="winning-number mx-1 text-center"
-                  />
-                  <input
-                    type="number"
-                    className="winning-number mx-1 text-center"
-                  />
+                  <Input type='number' />
+                  <Input type='number' />
+                  <Input type='number' />
+                  <Input type='number' />
+                  <Input type='number' />
+                  <Input type='number' />
                 </div>
               </div>
               <div className="bonus-number-container flex-grow">
                 <h4 className="mt-0 mb-3 text-center">보너스 번호</h4>
                 <div className="d-flex justify-center">
-                  <input type="number" className="bonus-number text-center" />
+                  <Input type='number' className="bonus-number" />
                 </div>
               </div>
             </div>
