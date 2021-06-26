@@ -33,8 +33,8 @@ function App() {
         <AppWidthWrapper>
           <h1 className='title'>🎱 행운의 로또</h1>
           <PurchseForm handleSubmitPrice={handleSubmitPrice} />
-          <Lottos tickets={tickets} />
-          <WinningNumberForm />
+          { tickets.length !== 0 && <Lottos tickets={tickets} /> }
+          { tickets.length !== 0 && <WinningNumberForm /> }
         </AppWidthWrapper>
       </AppFlexWrapper>
       {/* NOTE: state로 open 관리 */}

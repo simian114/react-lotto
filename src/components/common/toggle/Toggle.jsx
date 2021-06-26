@@ -120,10 +120,10 @@ const ToggleCheckBox = styled.input`
   }
 `;
 
-const Toggle = () => {
+const Toggle = ({ handleToggle }) => {
   return (
     <ToggleWrapper>
-      <ToggleCheckBox type='checkbox' />
+      <ToggleCheckBox type='checkbox' onChange={({ target }) => handleToggle(target.checked)} />
       <ToggleText>번호보기</ToggleText>
     </ToggleWrapper>
   );
