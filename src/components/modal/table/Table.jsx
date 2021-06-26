@@ -1,6 +1,7 @@
 import { TableWrapper, TdThWrapper, TrWrapper, Wrapper } from './Table.styles';
+import { memo } from 'react';
 
-const Table = ({ winners }) => {
+const Table = memo(({ winners }) => {
   return (
     <Wrapper>
       <TableWrapper>
@@ -41,6 +42,6 @@ const Table = ({ winners }) => {
       </TableWrapper>
     </Wrapper>
   );
-};
+});
 
 export default Table;

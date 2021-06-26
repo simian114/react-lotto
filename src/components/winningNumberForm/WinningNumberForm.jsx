@@ -6,12 +6,12 @@ import {
   WinningNumberFormWrapper,
 } from './WinningNumberForm.styles';
 import { FlexGrow, FlexWrapper } from '../common/flex/Flex.styles';
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { isValidWinningNumber } from '../../services/validation';
 import { TICKET } from '../../constants/ticket';
 import { INPUT_VALID_MESSAGE } from '../../constants/alertMessage';
 
-const WinningNumberForm = ({ handleSubmit }) => {
+const WinningNumberForm = memo(({ handleSubmit }) => {
   const [inputs, setInputs] = useState(['', '', '', '', '', '', '']);
 
   const onSubmit = (e) => {
@@ -72,6 +72,6 @@ const WinningNumberForm = ({ handleSubmit }) => {
       </Button>
     </WinningNumberFormWrapper>
   );
-};
+});
 
 export default WinningNumberForm;

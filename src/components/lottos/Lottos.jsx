@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import { LottoList, LottosHeader, LottosWrapper } from './Lottos.styles';
 import Toggle from '../common/toggle/Toggle';
 import Lotto from './lotto/Lotto';
 
-const Lottos = ({ tickets }) => {
+const Lottos = memo(({ tickets }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
@@ -25,6 +25,6 @@ const Lottos = ({ tickets }) => {
       </LottoList>
     </LottosWrapper>
   );
-};
+});
 
 export default Lottos;

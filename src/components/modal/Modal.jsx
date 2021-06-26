@@ -1,5 +1,6 @@
 import Table from './table/Table';
 import Button from '../common/button/Button';
+import { memo } from 'react';
 import {
   ButtonContainer,
   ModalClose,
@@ -8,7 +9,7 @@ import {
   ModalWrapper,
 } from './Modal.styles';
 
-const Modal = ({ open, handleClose, handleRetry, winners, yields }) => {
+const Modal = memo(({ open, handleClose, handleRetry, winners, yields }) => {
   return (
     <ModalWrapper open={open}>
       <ModalInnerWrapper>
@@ -26,6 +27,6 @@ const Modal = ({ open, handleClose, handleRetry, winners, yields }) => {
       </ModalInnerWrapper>
     </ModalWrapper>
   );
-};
+});
 
 export default Modal;

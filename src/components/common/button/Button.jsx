@@ -1,6 +1,7 @@
 import StyledButton from './button.styles';
+import { memo } from 'react';
 
-const Button = ({ children, color, fullWidth, onClick }) => {
+const Button = memo(({ children, color, fullWidth, onClick }) => {
   return (
     <StyledButton 
       color={color}
@@ -10,7 +11,7 @@ const Button = ({ children, color, fullWidth, onClick }) => {
       {children}
     </StyledButton>
   );
-};
+});
 
 Button.defaultProps = {
   color: 'primary',

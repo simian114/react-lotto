@@ -5,11 +5,10 @@ import {
 } from './PurchseForm.style';
 import Button from '../common/button/Button';
 import Input from '../common/input/Input';
-import { useState, useRef } from 'react';
 import { isValidPrice } from '../../services/validation';
+import { memo } from 'react';
 
-const PurchseForm = ({ price, handleInputChange, handleSubmitPrice }) => {
-
+const PurchseForm = memo(({ price, handleInputChange, handleSubmitPrice }) => {
   const onChange = ({ target: { value }}) => {
     handleInputChange(value);
   }
@@ -30,6 +29,6 @@ const PurchseForm = ({ price, handleInputChange, handleSubmitPrice }) => {
       </PurchaseFormDivWrapper>
     </PurchaseFormWrapper>
   );
-};
+});
 
 export default PurchseForm;
