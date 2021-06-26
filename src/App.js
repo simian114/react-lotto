@@ -5,17 +5,23 @@ import { AppFlexWrapper, AppWidthWrapper, AppWrapper } from './App.styles';
 import Modal from './components/modal/Modal';
 import { useState } from 'react';
 import { generateLottos } from './services/tickets';
+import { lotteryDraw } from './services/result';
 
 function App() {
   const [tickets, setTickets] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [winners, setWinners] = useState([]);
+  const [yields, setYields] = useState(null);
 
   const handleSubmitPrice = (price) => {
     setTickets(generateLottos(price))
   }
 
   const handleSubmitWinningNumber = (winNums) => {
-    console.log(winNums);
+    const { winners, yields } = lotteryDraw(tickets, winNums);
+    setWinners(winners);
+    setYields(yields);
+    setIsModalOpen(true);
   }
 
   const handleModalClose = () => {
@@ -41,8 +47,13 @@ function App() {
             /> }
         </AppWidthWrapper>
       </AppFlexWrapper>
-      {/* NOTE: state로 open 관리 */}
-      <Modal open={isModalOpen} />
+      <Modal
+        open={isModalOpen}
+        handleClose={handleModalClose}
+        handleRetry={handleAppRetry}
+        winners={winners}
+        yields={yields}
+      />
     </AppWrapper>
   );
 }

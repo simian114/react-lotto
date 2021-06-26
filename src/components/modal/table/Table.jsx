@@ -1,6 +1,6 @@
 import { TableWrapper, TdThWrapper, TrWrapper, Wrapper } from './Table.styles';
 
-const Table = () => {
+const Table = ({ winners }) => {
   return (
     <Wrapper>
       <TableWrapper>
@@ -15,27 +15,27 @@ const Table = () => {
           <TrWrapper>
             <TdThWrapper>3개</TdThWrapper>
             <TdThWrapper>5,000</TdThWrapper>
-            <TdThWrapper>n개</TdThWrapper>
+            <TdThWrapper>{winners[3]}개</TdThWrapper>
           </TrWrapper>
           <TrWrapper>
             <TdThWrapper>4개</TdThWrapper>
             <TdThWrapper>50,000</TdThWrapper>
-            <TdThWrapper>n개</TdThWrapper>
+            <TdThWrapper>{winners[4]}개</TdThWrapper>
           </TrWrapper>
           <TrWrapper>
             <TdThWrapper>5개</TdThWrapper>
             <TdThWrapper>1,500,000</TdThWrapper>
-            <TdThWrapper>n개</TdThWrapper>
+            <TdThWrapper>{winners[5]}개</TdThWrapper>
           </TrWrapper>
           <TrWrapper>
             <TdThWrapper>5개 + 보너스볼</TdThWrapper>
             <TdThWrapper>30,000,000</TdThWrapper>
-            <TdThWrapper>n개</TdThWrapper>
+            <TdThWrapper>{winners.bonus}개</TdThWrapper>
           </TrWrapper>
           <TrWrapper>
             <TdThWrapper>6개</TdThWrapper>
             <TdThWrapper>2,000,000,000</TdThWrapper>
-            <TdThWrapper>n개</TdThWrapper>
+            <TdThWrapper>{winners[6]}개</TdThWrapper>
           </TrWrapper>
         </tbody>
       </TableWrapper>
