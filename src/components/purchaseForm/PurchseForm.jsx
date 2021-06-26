@@ -10,8 +10,7 @@ import { isValidPrice } from '../../services/validation';
 
 const PurchseForm = ({ price, handleInputChange, handleSubmitPrice }) => {
 
-  const onChange = (e) => {
-    const value = e.target.value;
+  const onChange = ({ target: { value }}) => {
     handleInputChange(value);
   }
 
