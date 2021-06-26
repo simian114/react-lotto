@@ -15,7 +15,7 @@ const PurchseForm = ({ handleSubmitPrice }) => {
     setPrice(e.target.value);
   }
 
-  const handleSubmit = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
     const message = isValidPrice(price);
     if (message) return alert(message);
@@ -23,7 +23,7 @@ const PurchseForm = ({ handleSubmitPrice }) => {
   }
 
   return (
-    <PurchaseFormWrapper onSubmit={handleSubmit}>
+    <PurchaseFormWrapper onSubmit={onSubmit}>
       <PurchaseFormLabel>구입할 금액을 입력해주세요.</PurchaseFormLabel>
       <PurchaseFormDivWrapper>
         <Input type='number' value={price} onChange={handleChange} fullWidth />
