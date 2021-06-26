@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { LottoList, LottosHeader, LottosWrapper } from './Lottos.styles';
 import Toggle from '../common/toggle/Toggle';
 import Lotto from './lotto/Lotto';

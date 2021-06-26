@@ -12,7 +12,7 @@ const FlexWrapper = styled.div`
 const FlexGrow = styled.div`
   flex-grow: 1;
   ${({ grow }) =>
-    grow == 0 &&
+    grow === 0 &&
     css`
       flex-grow: 0;
     `}
