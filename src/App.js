@@ -8,12 +8,17 @@ import { generateLottos } from './services/tickets';
 import { lotteryDraw } from './services/result';
 
 function App() {
+  const [price, setPrice] = useState(0);
   const [tickets, setTickets] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [winners, setWinners] = useState([]);
   const [yields, setYields] = useState(null);
 
-  const handleSubmitPrice = (price) => {
+  const handleInputChange = (value) => {
+    setPrice(value);
+  }
+
+  const handleSubmitPrice = () => {
     setTickets(generateLottos(price))
   }
 
@@ -29,6 +34,7 @@ function App() {
   }
 
   const handleAppRetry = () => {
+    setPrice(0);
     setTickets([]);
     setIsModalOpen(false);
   }
@@ -38,7 +44,7 @@ function App() {
       <AppFlexWrapper>
         <AppWidthWrapper>
           <h1 className='title'>🎱 행운의 로또</h1>
-          <PurchseForm handleSubmitPrice={handleSubmitPrice} />
+          <PurchseForm price={price} handleInputChange={handleInputChange} handleSubmitPrice={handleSubmitPrice} />
           { tickets.length !== 0 &&
             <Lottos tickets={tickets} /> }
           { tickets.length !== 0 &&
